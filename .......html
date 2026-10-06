@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Official Notice</title>
+
+<style>
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(circle at 20% 20%, #25113d 0%, transparent 35%),
+
+        radial-gradient(circle at 80% 70%, #32103d 0%, transparent 40%),
+
+        linear-gradient(145deg, #09040f, #180b25, #0b0612);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+/* MAIN CARD */
+
+.card {
+
+    width: 90%;
+
+    max-width: 660px;
+
+    min-height: 700px;
+
+    padding: 42px 40px;
+
+    background: rgba(20, 10, 30, 0.88);
+
+    border: 1px solid rgba(231, 91, 183, 0.45);
+
+    border-radius: 45px;
+
+    box-shadow:
+
+        0 0 50px rgba(194, 51, 154, 0.12),
+
+        inset 0 0 40px rgba(255, 255, 255, 0.02);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* OFFICIAL NOTICE */
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 25px;
+
+    border-radius: 30px;
+
+    border: 1px solid #a83262;
+
+    background: rgba(100, 15, 55, 0.35);
+
+    color: #e9a6bd;
+
+    font-family: Georgia, serif;
+
+    letter-spacing: 5px;
+
+    font-size: 15px;
+
+    margin-bottom: 45px;
+
+}
+
+.badge::after {
+
+    content: "";
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #e63d72;
+
+    box-shadow: 0 0 12px #e63d72;
+
+}
+
+/* HEADING */
+
+h1 {
+
+    font-size: 40px;
+
+    margin: 0 0 22px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+}
+
+.subtitle {
+
+    color: #d5a9bd;
+
+    font-size: 23px;
+
+    font-style: italic;
+
+    margin-bottom: 45px;
+
+}
+
+/* MESSAGE BOX */
+
+.message {
+
+    border: 1px solid rgba(192, 62, 148, 0.4);
+
+    background: rgba(5, 2, 10, 0.35);
+
+    border-radius: 25px;
+
+    padding: 45px 30px;
+
+    color: #e2b5c9;
+
+    font-size: 22px;
+
+    line-height: 1.55;
+
+    margin-bottom: 40px;
+
+}
+
+.pickup {
+
+    margin-top: 25px;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    font-size: 38px;
+
+    line-height: 1.25;
+
+    color: #e9a4c4;
+
+}
+
+.asap {
+
+    display: block;
+
+    margin-top: 22px;
+
+    color: #9f637d;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+/* CALL BUTTON */
+
+.call-button {
+
+    width: 100%;
+
+    padding: 22px;
+
+    border-radius: 45px;
+
+    border: 1px solid #cf5aa4;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #5b2059,
+
+            #7c2b70
+
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+
+        0 10px 35px rgba(180, 50, 140, 0.18);
+
+    transition: all 0.25s ease;
+
+}
+
+.call-button:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+
+        0 0 30px rgba(218, 77, 175, 0.35);
+
+}
+
+/* FOOTER */
+
+.footer {
+
+    margin-top: 50px;
+
+    color: #936078;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+}
+
+/* CONFETTI */
+
+.confetti {
+
+    position: fixed;
+
+    top: -30px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation: fall linear forwards;
+
+    font-size: 22px;
+
+}
+
+@keyframes fall {
+
+    0% {
+
+        transform:
+
+            translateY(-30px)
+
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+
+            translateY(110vh)
+
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        width: 92%;
+
+        min-height: auto;
+
+        padding: 38px 22px;
+
+        border-radius: 40px;
+
+    }
+
+    h1 {
+
+        font-size: 36px;
+
+    }
+
+    .subtitle {
+
+        font-size: 21px;
+
+    }
+
+    .message {
+
+        font-size: 20px;
+
+        padding: 35px 20px;
+
+    }
+
+    .pickup {
+
+        font-size: 34px;
+
+    }
+
+    .footer {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="badge">
+
+        OFFICIAL NOTICE
+
+    </div>
+
+    <h1>
+
+        Heyyy dadayyy 😉
+
+    </h1>
+
+    <div class="subtitle">
+
+        Hope your day’s been great.
+
+    </div>
+
+    <div class="message">
+
+        Unfortunately, I have one final item of business:
+
+        <div class="pickup">
+
+            "I want to tickle<br>
+
+            your pickle."
+
+        </div>
+
+        <span class="asap">
+
+            (AS SOON AS POSSIBLE 🥒🔥)
+
+        </span>
+
+    </div>
+
+    <button class="call-button" onclick="makeItRain()">
+
+        Call me as soon as you can 😉
+
+    </button>
+
+    <div class="footer">
+
+        CLASSIFIED • CONFIDENTIAL • EXTREMELY IMPORTANT
+
+    </div>
+
+</div>
+
+<script>
+
+function makeItRain() {
+
+    const symbols = [
+
+        "♥",
+
+        "♥",
+
+        "■",
+
+        "■",
+
+        "◆",
+
+        "✦",
+
+        "✧",
+
+        "●"
+
+    ];
+
+    for (let i = 0; i < 70; i++) {
+
+        const confetti =
+
+            document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.innerHTML =
+
+            symbols[
+
+                Math.floor(
+
+                    Math.random() * symbols.length
+
+                )
+
+            ];
+
+        confetti.style.left =
+
+            Math.random() * 100 + "vw";
+
+        confetti.style.fontSize =
+
+            (Math.random() * 15 + 15) + "px";
+
+        confetti.style.animationDuration =
+
+            (Math.random() * 3 + 3) + "s";
+
+        confetti.style.animationDelay =
+
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 6000);
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
+
